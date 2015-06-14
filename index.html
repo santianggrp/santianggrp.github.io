@@ -1,305 +1,163 @@
 <!DOCTYPE html>
-<html><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Script Eden ( http://scripteden.net/ ) Template Builder v2.0.0">  
-    <!--pageMeta-->
-
-    <!-- Loading Bootstrap -->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Loading Flat UI -->
-    <link href="css/flat-ui.css" rel="stylesheet">
-    
-    <link href="css/style.css" rel="stylesheet">
-
-    <link href="css/style.complete.css" rel="stylesheet">
-    
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-    
-    <!--headerIncludes-->
-<script type="text/javascript">
-          /**
- * @license
- *
- * H5F 1.1.1
- * See https://github.com/ryanseddon/H5F/ for details.
- *
- * Copyright (c) 2013 Ryan Seddon
- *
- */
-(function(e,t){"function"==typeof define&&define.amd?define(t):"object"==typeof module&&module.exports?module.exports=t():e.H5F=t()})(this,function(){var e,t,a,i,n,r,l,s,o,u,d,c,v,p,f,m,b,h,g,y,w,C,N,A,E,$,x=document,k=x.createElement("input"),q=/^[a-zA-Z0-9.!#$%&'*+-\/=?\^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,M=/[a-z][\-\.+a-z]*:\/\//i,L=/^(input|select|textarea)$/i;return r=function(e,t){var a=!e.nodeType||!1,i={validClass:"valid",invalidClass:"error",requiredClass:"required",placeholderClass:"placeholder",onSubmit:Function.prototype,onInvalid:Function.prototype};if("object"==typeof t)for(var r in i)t[r]===void 0&&(t[r]=i[r]);if(n=t||i,a)for(var s=0,o=e.length;o>s;s++)l(e[s]);else l(e)},l=function(a){var i,r=a.elements,l=r.length,c=!!a.attributes.novalidate;if(g(a,"invalid",o,!0),g(a,"blur",o,!0),g(a,"input",o,!0),g(a,"keyup",o,!0),g(a,"focus",o,!0),g(a,"change",o,!0),g(a,"click",u,!0),g(a,"submit",function(i){return e=!0,t||c||a.checkValidity()?(n.onSubmit.call(a,i),void 0):(w(i),void 0)},!1),!v())for(a.checkValidity=function(){return d(a)};l--;)i=!!r[l].attributes.required,"fieldset"!==r[l].nodeName.toLowerCase()&&s(r[l])},s=function(e){var t=e,a=h(t),n={type:t.getAttribute("type"),pattern:t.getAttribute("pattern"),placeholder:t.getAttribute("placeholder")},r=/^(email|url)$/i,l=/^(input|keyup)$/i,s=r.test(n.type)?n.type:n.pattern?n.pattern:!1,o=p(t,s),u=m(t,"step"),v=m(t,"min"),b=m(t,"max"),g=!(""===t.validationMessage||void 0===t.validationMessage);t.checkValidity=function(){return d.call(this,t)},t.setCustomValidity=function(e){c.call(t,e)},t.validity={valueMissing:a,patternMismatch:o,rangeUnderflow:v,rangeOverflow:b,stepMismatch:u,customError:g,valid:!(a||o||u||v||b||g)},n.placeholder&&!l.test(i)&&f(t)},o=function(e){var t=C(e)||e,a=/^(input|keyup|focusin|focus|change)$/i,r=/^(submit|image|button|reset)$/i,l=/^(checkbox|radio)$/i,u=!0;!L.test(t.nodeName)||r.test(t.type)||r.test(t.nodeName)||(i=e.type,v()||s(t),t.validity.valid&&(""!==t.value||l.test(t.type))||t.value!==t.getAttribute("placeholder")&&t.validity.valid?(A(t,[n.invalidClass,n.requiredClass]),N(t,n.validClass)):a.test(i)?t.validity.valueMissing&&A(t,[n.requiredClass,n.invalidClass,n.validClass]):t.validity.valueMissing?(A(t,[n.invalidClass,n.validClass]),N(t,n.requiredClass)):t.validity.valid||(A(t,[n.validClass,n.requiredClass]),N(t,n.invalidClass)),"input"===i&&u&&(y(t.form,"keyup",o,!0),u=!1))},d=function(t){var a,i,r,l,s,u=!1;if("form"===t.nodeName.toLowerCase()){a=t.elements;for(var d=0,c=a.length;c>d;d++)i=a[d],r=!!i.attributes.disabled,l=!!i.attributes.required,s=!!i.attributes.pattern,"fieldset"!==i.nodeName.toLowerCase()&&!r&&(l||s&&l)&&(o(i),i.validity.valid||u||(e&&i.focus(),u=!0,n.onInvalid.call(t,i)));return!u}return o(t),t.validity.valid},c=function(e){var t=this;t.validationMessage=e},u=function(e){var a=C(e);a.attributes.formnovalidate&&"submit"===a.type&&(t=!0)},v=function(){return E(k,"validity")&&E(k,"checkValidity")},p=function(e,t){if("email"===t)return!q.test(e.value);if("url"===t)return!M.test(e.value);if(t){var i=e.getAttribute("placeholder"),n=e.value;return a=RegExp("^(?:"+t+")$"),n===i?!1:""===n?!1:!a.test(e.value)}return!1},f=function(e){var t={placeholder:e.getAttribute("placeholder")},a=/^(focus|focusin|submit)$/i,r=/^(input|textarea)$/i,l=/^password$/i,s=!!("placeholder"in k);s||!r.test(e.nodeName)||l.test(e.type)||(""!==e.value||a.test(i)?e.value===t.placeholder&&a.test(i)&&(e.value="",A(e,n.placeholderClass)):(e.value=t.placeholder,g(e.form,"submit",function(){i="submit",f(e)},!0),N(e,n.placeholderClass)))},m=function(e,t){var a=parseInt(e.getAttribute("min"),10)||0,i=parseInt(e.getAttribute("max"),10)||!1,n=parseInt(e.getAttribute("step"),10)||1,r=parseInt(e.value,10),l=(r-a)%n;return h(e)||isNaN(r)?"number"===e.getAttribute("type")?!0:!1:"step"===t?e.getAttribute("step")?0!==l:!1:"min"===t?e.getAttribute("min")?a>r:!1:"max"===t?e.getAttribute("max")?r>i:!1:void 0},b=function(e){var t=!!e.attributes.required;return t?h(e):!1},h=function(e){var t=e.getAttribute("placeholder"),a=/^(checkbox|radio)$/i,i=!!e.attributes.required;return!(!i||""!==e.value&&e.value!==t&&(!a.test(e.type)||$(e)))},g=function(e,t,a,i){E(window,"addEventListener")?e.addEventListener(t,a,i):E(window,"attachEvent")&&window.event!==void 0&&("blur"===t?t="focusout":"focus"===t&&(t="focusin"),e.attachEvent("on"+t,a))},y=function(e,t,a,i){E(window,"removeEventListener")?e.removeEventListener(t,a,i):E(window,"detachEvent")&&window.event!==void 0&&e.detachEvent("on"+t,a)},w=function(e){e=e||window.event,e.stopPropagation&&e.preventDefault?(e.stopPropagation(),e.preventDefault()):(e.cancelBubble=!0,e.returnValue=!1)},C=function(e){return e=e||window.event,e.target||e.srcElement},N=function(e,t){var a;e.className?(a=RegExp("(^|\\s)"+t+"(\\s|$)"),a.test(e.className)||(e.className+=" "+t)):e.className=t},A=function(e,t){var a,i,n="object"==typeof t?t.length:1,r=n;if(e.className)if(e.className===t)e.className="";else for(;n--;)a=RegExp("(^|\\s)"+(r>1?t[n]:t)+"(\\s|$)"),i=e.className.match(a),i&&3===i.length&&(e.className=e.className.replace(a,i[1]&&i[2]?" ":""))},E=function(e,t){var a=typeof e[t],i=RegExp("^function|object$","i");return!!(i.test(a)&&e[t]||"unknown"===a)},$=function(e){for(var t=document.getElementsByName(e.name),a=0;t.length>a;a++)if(t[a].checked)return!0;return!1},{setup:r}});
-
-        </script>
-     
-    
-</head>
-<body>
-    
-    <div id="page" class="page">
-        
-    <!-- /.item --><!-- /.item --><!-- Start Contact 1 -->
-    <!-- /.content-block -->
-	<!--// END Contact 1 --><header class="item header margin-top-0 header10" id="header10">
-    
-    		<div class="wrapper">
-    	
-    			<nav role="navigation" class="navbar navbar-white navbar-embossed navbar-lg navbar-fixed-top">
-    					
-    				<div class="container">
-    				
-    					<div class="navbar-header">
-    						<button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button">
-    							<span class="sr-only">Toggle navigation</span>
-    						</button>
-    						<a href="#" class="navbar-brand brand"> <img src="images/icons/ubmrella.svg" alt=""> Takafulis</a>
-   						</div>
-    								    					
-    				</div><!-- /.container -->
-    					
-    			</nav>
-    			
-    			<div class="container padding-top-100">
-    			
-    				<div class="row">
-    					
-    					<div class="col-md-5">
-	    					
-	    					<div class="editContent">
-	    					<h2>Selain Mercedes, ada banyak lagi!</h2>
-	    					
-	    					<p>
-							Dapat cash setiap 2 tahun, dividen antara 8% - 15% dan banyak lagi. Isi borang dibawah untuk keterangan lanjut.
-	    					</p>
-	    					</div>
-	    					
-							<iframe name="iframe_oeevxyfl" id="iframe_oeevxyfl" style="display:none;" onload="if(typeof sent_oeevxyfl!='undefined'){window.location='http://takafulis.com/';}"></iframe>
-							<form action="https://docs.google.com/forms/d/1ZPLG6Oo87mz1tTtTe8xz6_b87AgwHXZukq9RSUCozLI/formResponse" method="POST" id="ss-form" target="iframe_oeevxyfl" onsubmit="sent_oeevxyfl=true">
-									<div class="row">
-										<div class="col-xs-6">
-											<input type="text" name="entry.725779131" placeholder="Nama *" class="form-control" id="entry_725779131" dir="auto" title="Isikan nama anda">
-										</div>
-										
-										<div class="col-xs-6">
-											<input type="tel" name="entry.1232936308" placeholder="No Telefon *" class="form-control" id="entry_1232936308" dir="auto" title="Isikan no telefon anda">
-										</div>
-									</div>
-									<input type="hidden" name="draftResponse" value="[,,&quot;-3689040576541107343&quot;]
-									">
-									<input type="hidden" name="pageHistory" value="0">
-
-
-									<input type="hidden" name="fbzx" value="-3689040576541107343">
-
-									<button type="submit" class="btn btn-primary btn-block"><span class="fui-check"></span> Saya nak Mercedes</button>
-							</form>
-
-
-							<script type='text/javascript' src='https://docs.google.com/static/forms/client/js/1266824289-formviewer_prd.js'></script>
-							<script type="text/javascript">H5F.setup(document.getElementById('ss-form'));
-									  _initFormViewer(
-										"[100,,[[[1232936308,[[1,10,,\x22\x22]\n]\n]\n]\n]\n]\n");</script>    				
-    					</div><!-- .col -->
-    				
-    					<div class="col-md-6 col-md-offset-1">
-    					
-    						<div class="videoWrapper">
-							<img width="560" height="315" src="images/bsn-ssp-jun.png" alt="">    						
-    					</div>
-    					
-    					</div><!-- /.col -->
-    				
-    				</div><!-- /.row -->
-    			
-    			</div><!-- /.container -->
-    	
-    		</div><!-- /.wrapper -->
-    	
-    	</header><!-- /.item --><div class="item content padding-top-0 padding-bottom-0" id="content_section1">
-    	
-    		<div class="wrapper grey">
-    		
-    		<div class="container">
-    		
-    			<div class="row margin-bottom-60">
-    			
-    				<div class="col-md-12">
-    					
-    					<div class="editContent">
-    					<h2>Takaful insurans memberi perlindungan komprehensif, keuntungan perlaburan dan ketenangan fikiran.</h2>
-    					
-    					<p class="lead">
-						Tidak semua syarikat takaful menawarkan manfaat hebat ini disamping berpeluang memenangi kereta mewah setiap bulan. 
-						Kenapa perlu bayar lebih jika anda boleh dapat banyak kelebihan dengan hanya satu pelan takaful ?
-    					</p>
-						<p>P.s: Oh, takaful bukan untuk orang Islam sahaja, bukan beragama Islam pun boleh dapatkan takaful insurans ini !</p>
-    					</div><!-- /.editContent -->
-    				
-    				</div>
-    			
-    			</div><!-- /.row -->
-    		
-    			<div class="row">
-    			
-    				<div class="col-md-4 text-center">
-    				   
-    				   	<div class="col">
-    				   	
-    						<img alt="" src="images/icons/money.svg" style="width: 30%;">
-    					
-    						<div class="editContent">
-    						<h3>Cash Payout</h3>
-    						
-    						<p>
-							Anda akan dibayar cash setiap dua tahun selama 30 tahun !
-    						</p>
-    						</div><!-- /.editContent -->
-    					
-    					</div><!-- /.col -->
-    						    					    				
-    				</div><!-- /.col-md-4 col -->
-    				
-    				<div class="col-md-4 text-center">
-    				    
-    				    <div class="col">
-    				    			
-    						<img alt="" src="images/icons/calculator.svg" style="width: 30%;">
-    					
-    						<div class="editContent">
-    						<h3>Rebat Cukai</h3>
-    						
-    						<p>
-							Anda akan memperoleh potongan cukai sebanyak RM 9,000 !
-    						</p>
-    						</div><!-- /.editContent -->
-    						
-    					</div><!-- /.col -->
-    						    					    				
-    				</div><!-- /.col-md-4 col -->
-    				
-    				<div class="col-md-4 text-center">
-    				   	
-    				   	<div class="col">
-    				   				
-    						<img alt="" src="images/icons/loop.svg" style="width: 30%;">
-    					
-    						<div class="editContent">
-    						<h3>Badal Haji</h3>
-    						
-    						<p>
-							Anda akan dapat pahala menunaikan haji walaupun sudah meninggal dunia !
-    						</p>
-    						</div><!-- /.editContent -->
-    						
-    					</div><!-- /.col -->	
-    					    					    				
-    				</div><!-- /.col-md-4 col -->
-    			
-    			</div><!-- /.row -->
-    		
-    		</div><!-- /.container -->
-    		
-    		</div><!-- /.wrapper -->
-    	
-    	</div><!-- /.item --><!-- Start Contact 1 -->
-    <section class="content-block contact-1">
-		<div class="container text-center">
-			
-			<div class="col-sm-10 col-sm-offset-1">
-				
-				<div class="underlined-title">
-					<div class="editContent">
-		        		<h1>Hubungi Sekarang</h1>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>SANTIANG Group</title>
+		<meta name="description" content="SANTIANG Group | Fesyen | Teknologi | Pembinaan" />
+		<meta name="keywords" content="SANTIANG Enterprise, Busana Ummah, Facile Net, fashion, technology, construction, portfolio, Batu Pahat, Fadhil Takafulis" />
+		<meta name="author" content="Fadhil Takafulis" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">	
+			<div id="bl-main" class="bl-main">
+				<section>
+					<div class="bl-box">
+						<h2 class="bl-icon bl-icon-about">Santiang</h2>
 					</div>
-		        	<hr>
-		        	<div class="editContent">
-		        		<h2>Untuk mengetahui lebih lanjut</h2>
+					<div class="bl-content">
+						<h2>Mengenai Santiang Group (Santiang)</h2>
+						<p>Santiang Group Sdn. Bhd. (1115548-T)  ditubuhkan pada September 2012 dan berpusat di Batu Pahat. Fokus utama bisnes Santiang
+						adalah dalam bidang fesyen, teknologi dan pembinaan. Untuk mengetahui lebih lanjut berkenaan setiap perniagaan, sila kunjungi 
+						setiap bahagian di muka hadapan website ini. </p>
+						<p><span class="test-close"><strong>&laquo; Kembali ke muka depan.</strong></span></p>
 					</div>
-	        	</div>
-				
-				<div class="editContent">
-					<p>Anda akan diterangkan kelebihan menyeluruh pelan takaful ini untuk mengetahui sama ada ianya sesuai dengan impian anda. Tiada paksaan untuk anda. 
-					Paling kurang anda peroleh ilmu kewangan untuk diaplikasikan.</p>
+					<span class="bl-icon bl-icon-close"></span>
+				</section>
+				<section id="bl-work-section">
+					<div class="bl-box">
+						<h2 class="bl-icon bl-icon-works">Fesyen</h2>
+					</div>
+					<div class="bl-content">
+						<p>Umat Islam menitik beratkan pemakaian yang menutup aurat. Ini tidak bermakna umat Islam tidak boleh berpakaian cantik.
+						Fokus utama Santiang dalam bidang fesyen adalah barangan haji dan umrah, pakaian islami dan kelengkapan solat seperti
+						sejadah dan tasbih.</p>
+						
+						<p>Sila layari setiap website khusus kami dibawah mengikut kategori untuk membeli secara online: </p>
+						
+						<p><b>Busana Ummah</b>: Menyediakan reka bentuk fesyen terkini yang menutup aurat,senang gosok, lembut dipakai dan cantik.<br/> 
+							&#8594; klik <u><a href="http://www.busanaummah.com"><strong>Busana Ummah</strong></a></u> atau di
+							<u><a href="http://fb.com/busanaummah"><strong>Facebook Busana Ummah</strong></a></u>
+						</p>
+
+						<p><b>Barangan Haji / Umrah</b>: Menyediakan barangan haji / umrah lengkap untuk umat Islam menunaikan ibadahnya.<br/> 
+							&#8594; klik <u><a href="http://lengkaphajiumrah.blogspot.com"><strong>Barangan Haji / Umrah</strong></a></u> 
+						</p>
+						
+						<p><b>Sejadah</b>: Menyediakan sejadah yang anti habuk, tidak menyakitkan lutut ketika sujud dan selesa ketika.<br/> 
+							&#8594; klik <u><a href="http://sejadahtenang.blogspot.com"><strong>Sejadah</strong></a></u> 
+						</p>
+						
+						<!--p>Berikut contoh pakaian yang ada di kedai kami sekarang.</p>
+						<ul id="bl-work-items">
+							<li data-panel="panel-1"><a href="#"><img src="images/1.jpg" /></a></li>
+							<li data-panel="panel-2"><a href="#"><img src="images/2.jpg" /></a></li>
+							<li data-panel="panel-3"><a href="#"><img src="images/3.jpg" /></a></li>
+							<li data-panel="panel-4"><a href="#"><img src="images/4.jpg" /></a></li>
+						</ul-->
+						<p><span class="test-close"><strong>&laquo; Kembali ke muka depan.</strong></span></p>
+					</div>
+					<span class="bl-icon bl-icon-close"></span>
+				</section>
+				<section>
+					<div class="bl-box">
+						<h2 class="bl-icon bl-icon-blog">Teknologi</h2>
+					</div>
+					<div class="bl-content">
+						<p>Perkhidmatan yang ditawarkan adalah mengikut bajet anda dan pakej berkenaan. Setiap pakej dibawah didatangkan dengan hosting <strong>
+						percuma seumur hidup</strong></p>
+						<article>
+							<h3>Pakej Sistem Website</h3>
+							<p>Nyatakan sistem apa yang anda inginkan, kami akan buatkan website tersebut</br>
+							Contoh: Sistem FYP UniKL </br>Masa siap: Bergantung kepada kepayahan sistem</p>
+						</article>
+						<article>
+							<h3>Pakej Website Profesional</h3>
+							<p>Setiap syarikat / bisnes perlukan website hatta seorang juru foto sekali pun pada zaman IT ini. Ianya boleh jadi
+							sebuah blog, sebuah portfolio atau laman web rasmi syarikat.</br>
+							Contoh: Takafulis.com dan banyak lagi contoh website lain. (Sila email kami untuk maklumat lanjut)<br/>Masa siap: 7 hari bekerja</p>
+						</article>
+						<article>
+							<h3>Pakej Website Kedai Online</h3>
+							<p>Kalau anda berniaga pada zaman moden ini, tiada kedai online adalah tidak sah. Dapatkan kedai online bisnes anda
+							bagi menambahkan capaian pelanggan serta keuntungan bisnes online</br>
+							Contoh: busanummah.com dan banyak lagi contoh website lain.(Sila email kami untuk maklumat lanjut)<br/>Masa siap: 5 hari bekerja</p>
+						</article>
+						<!--article>
+							<h3>Nama Domain</h3>
+							<p>Perkhidmatan pembelian nama domain website hanya RM50 sahaja.</p>
+						</article-->
+						<p>Emelkan pakej yang anda minati ke project@santianggroup.com. Atau jika anda mempunyai sebarang pertanyaan untuk maklumat lebih
+						lanjut, silalah emel ke alamat yang dinyatakan diatas.</p>
+						<p><span class="test-close"><strong>&laquo; Kembali ke muka depan.</strong></span></p>
+					</div>
+					<span class="bl-icon bl-icon-close"></span>
+				</section>
+				<section>
+					<div class="bl-box">
+						<h2 class="bl-icon bl-icon-contact">Pembinaan</h2>
+					</div>
+					<div class="bl-content">
+						<p>Berpengalaman lebih daripada 26 tahun dalam bidang pembinaan termasuk pembinaan rumah, ubahsuai rumah, 
+						penambahbaikan rumah, pembinaan rumah sarang burung, pembinaan reban ayam, ubahsuai surau dan sebagainya.</p>
+						<p>Kami menerima tempahan perkhidmatan ini sekitar kawasan Batu Pahat, Pontian, Muar atau Pagoh. Kami juga merupakan pakar
+						runding dalam bidang pembinaan jika anda memerlukan. Segera hubungi kami!</p>
+						<p><span class="test-close"><strong>&laquo; Kembali ke muka depan.</strong></span></p>
+					</div>
+					<span class="bl-icon bl-icon-close"></span>
+				</section>
+				<!-- Panel items for the works -->
+				<div class="bl-panel-items" id="bl-panel-work-items">
+					<div data-panel="panel-1">
+						<div>
+							<img src="images/1.JPG" />
+							<h3>Blouse Rifah</h3>
+							<p>Jenis kain: Cotton <br/> Harga: RM 55.00 <br/> Features: Butang depan sehingga bawah dada <br/> Available size: 
+- XL (bahu: 38 cm; ukur lilit bawah lengan: 46 cm)</p>
+						</div>
+					</div>
+					<div data-panel="panel-2">
+						<div>
+							<img src="images/2.JPG" />
+							<h3>Blouse Flowery</h3>
+							<p>Jenis kain: Cotton <br/> Harga: RM 40.00 <br/> Warna: <br/> - Blue-flowery (seperti dalam gambar) <br/> - Purple-flowery <br/>
+- Red-flowery <br/> Features: Butang depan sehingga pinggang, kocek dua di depan <br/> Available size: <br/> 
+- M (bahu: 41.5 cm; ukur lilit bawah lengan: 52 cm; seat: 107 cm) <br/> - L (bahu: 42 cm; ukur lilit bawah lengan: 52 cm; seat: 108 cm) <br/> 
+- XL (bahu: 44 cm; ukur lilit bawah lengan: 53 cm; seat: 112 cm)</p>
+						</div>
+					</div>
+					<div data-panel="panel-3">
+						<div>
+							<img src="images/3.JPG" />
+							<h3>Kemeja Burberry</h3>
+							<p>Jenis kain: Cotton <br/> Harga: RM 79.00 <br/> Available size: <br/> - S (bahu: 42 cm, ukur lilit bawah lengan: 50 cm) <br/>
+- M (bahu: 44 cm, ukur lilit bawah lengan: 50 cm)</p>
+						</div>
+					</div>
+					<div data-panel="panel-4">
+						<div>
+							<img src="images/4.jpg" />
+							<h3>Baby Cap</h3>
+							<p>Pelbagai reka bentuk dan corak cantik menawan</p>
+						</div>
+					</div>
+					<nav>
+						<span class="bl-next-work">&gt; Design lagi</span>
+						<span class="bl-icon bl-icon-close"></span>
+					</nav>
 				</div>
-				<div class="editContent">
-					<ul class="contact-info">
-						<li><span class="fa fa-map-marker"></span>Setia Walk Galeria, Pusat Bandar Puchong, Puchong, Selangor</li>
-						<li><span class="fa fa-phone"></span>0 1 0 8 0 7 7 9 6 1</li>
-						<li><span class="fa fa-envelope"></span><a href="mailto:fadhiltakafulis@gmail.com">fadhiltakafulis@gmail.com</a> </li>
-					</ul>
-				</div>
-				
-				<div class="form-container">
-							<iframe name="iframe_oeevxyfl" id="iframe_oeevxyfl" style="display:none;" onload="if(typeof sent_oeevxyfl!='undefined'){window.location='http://takafulis.com/';}"></iframe>
-							<form action="https://docs.google.com/forms/d/1ZPLG6Oo87mz1tTtTe8xz6_b87AgwHXZukq9RSUCozLI/formResponse" method="POST" id="ss-form" target="iframe_oeevxyfl" onsubmit="sent_oeevxyfl=true">
-									<div class="row">
-										<div class="col-sm-6">
-											<input type="text" name="entry.725779131" placeholder="Nama *" class="form-control" id="entry_725779131" dir="auto" title="Isikan nama anda">
-										</div>
-										
-										<div class="col-sm-6">
-											<input type="tel" name="entry.1232936308" placeholder="No Telefon *" class="form-control" id="entry_1232936308" dir="auto" title="Isikan no telefon anda">
-										</div>
-									</div>
-									<input type="hidden" name="draftResponse" value="[,,&quot;-3689040576541107343&quot;]
-									">
-									<input type="hidden" name="pageHistory" value="0">
-
-
-									<input type="hidden" name="fbzx" value="-3689040576541107343">
-
-									<div class="form-group">
-										<button type="submit" class="btn btn-primary"><span class="fui-check"></span> Hantar Sekarang</button>
-									</div>
-							</form>
-
-
-							<script type='text/javascript' src='https://docs.google.com/static/forms/client/js/1266824289-formviewer_prd.js'></script>
-							<script type="text/javascript">H5F.setup(document.getElementById('ss-form'));
-									  _initFormViewer(
-										"[100,,[[[1232936308,[[1,10,,\x22\x22]\n]\n]\n]\n]\n]\n");</script>   
-				</div><!-- /.form-container -->
-			
-			</div><!-- /.col-sm-10 -->
-				
-		</div><!-- /.container -->
-	</section><!-- /.content-block -->
-	<!--// END Contact 1 --></div><!-- /#page -->
-
-
-    <!-- Load JS here for greater good =============================-->
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
-    <script src="js/jquery.ui.touch-punch.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-select.js"></script>
-    <script src="js/bootstrap-switch.js"></script>
-    <script src="js/flatui-checkbox.js"></script>
-    <script src="js/flatui-radio.js"></script>
-    <script src="js/jquery.tagsinput.js"></script>
-    <script src="js/jquery.placeholder.js"></script>
-	<script src="js/jquery.nivo.slider.pack.js"></script>
-    <script src="js/application.js"></script>
-	<script src="js/over.js"></script>
-	<script>
-	$(function(){
-		
-		if( $('#nivoSlider').size() > 0 ) {
-		
-	    	$('#nivoSlider').nivoSlider({
-	    		effect: 'random',
-				pauseTime: 5000
-	    	});
-		
-		}
-		
-	})
-	</script>
-
-
-</body></html>
+			</div>
+		</div><!-- /container -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/boxlayout.js"></script>
+		<script>
+			$(function() {
+				Boxlayout.init();
+			});
+		</script>
+	</body>
+</html>
